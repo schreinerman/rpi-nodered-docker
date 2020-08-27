@@ -26,11 +26,15 @@ LABEL maintainer="info@io-expert.com" \
 COPY "./init.d/*" /etc/init.d/ 
 
 #do installation
-RUN apt-get update  \
-    && apt-get install curl build-essential python-dev \
+RUN  apt-get update \
+    && apt-get install curl build-essential python-dev libstdc++6:armhf \
 #install node.js
-    && curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -  \
-    && apt-get install -y nodejs  \
+    && curl -sL https://unofficial-builds.nodejs.org/download/release/v12.18.3/node-v12.18.3-linux-armv6l.tar.gz -o /tmp/node-v12.18.3-linux-armv6l.tar.gz  \
+    && tar -C /tmp/ -zxvf  /tmp/node-v12.18.3-linux-armv6l.tar.gz \
+    && sudo cp -R /tmp/node-v12.18.3-linux-armv6l/* /usr/local \
+    && rm /tmp/node-v12.18.3-linux-armv6l.tar.gz \
+    && rm -R /tmp/node-v12.18.3-linux-armv6l \
+    && export PATH=$PATH:/usr/local/bin \
 #install Node-RED
     && npm install -g --unsafe-perm node-red \
     && npm install -g --unsafe-perm node-red-contrib-uibuilder \
