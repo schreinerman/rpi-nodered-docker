@@ -2,7 +2,7 @@
 #
 # use balenalib/raspberry-pi-debian:buster  for Raspberry 1, Zero, Zero W
 # use balenalib/armv7hf-debian:buster for Raspberry 2,3,4
-FROM balenalib/raspberry-pi-debian:buster
+FROM balenalib/armv7hf-debian:buster
 
 
 #dynamic build arguments coming from the /hook/build file
