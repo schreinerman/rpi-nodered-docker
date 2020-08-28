@@ -41,6 +41,7 @@ RUN apt-get update  \
     && npm install -g --unsafe-perm node-red-contrib-ui-value-trail \
     && npm install -g --unsafe-perm node-red-contrib-ui-value-trail \
     && npm install -g --unsafe-perm node-red-contrib-ui-led \
+    && npm install -g --unsafe-perm npm node-red-contrib-modbus \
     && npm install -g --unsafe-perm npm node-red-contrib-modbustcp \
 #clean up
     && rm -rf /tmp/* \
