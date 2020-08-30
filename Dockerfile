@@ -43,6 +43,7 @@ RUN apt-get update  \
     && npm install -g --unsafe-perm node-red-contrib-ui-led \
     && npm install -g --unsafe-perm npm node-red-contrib-modbus \
     && npm install -g --unsafe-perm npm node-red-contrib-modbustcp \
+    && npm install -g --unsafe-perm npm node-red-contrib-bigexec \
 #clean up
     && rm -rf /tmp/* \
     && apt-get remove curl \
