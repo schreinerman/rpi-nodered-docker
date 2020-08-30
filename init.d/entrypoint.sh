@@ -19,7 +19,7 @@ EOF
 sudo chmod 755 /usr/bin/cmd_restart
 cat << EOF > /usr/bin/cmd_shutdown
 #!/bin/sh
-echo 1 >/proc/sys/kernel/sysrq && echo o > /proc/sysrq-trigger && sleep 10 && echo b > /proc/sysrq-trigger
+echo 1 >/proc/sys/kernel/sysrq && echo s > /proc/sysrq-trigger && sleep 10 && echo o > /proc/sysrq-trigger
 EOF
 sudo chmod 755 /usr/bin/cmd_shutdown
 
