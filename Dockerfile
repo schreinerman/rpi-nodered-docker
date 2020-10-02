@@ -30,7 +30,7 @@ RUN apt-get update  \
     && apt-get install curl build-essential python-dev \
 #install node.js
     && curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -  \
-    && apt-get install -y nodejs  \
+    && apt-get install -y nodejs bluez  \
 #install Node-RED
     && npm install -g --unsafe-perm node-red \
     && npm install -g --unsafe-perm node-red-contrib-uibuilder \
@@ -44,6 +44,7 @@ RUN apt-get update  \
     && npm install -g --unsafe-perm npm node-red-contrib-modbus \
     && npm install -g --unsafe-perm npm node-red-contrib-modbustcp \
     && npm install -g --unsafe-perm npm node-red-contrib-bigexec \
+    && npm install -q --unsafe-perm node-red-contrib-generic-ble \
 #clean up
     && rm -rf /tmp/* \
     && apt-get remove curl \
