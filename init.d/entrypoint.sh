@@ -12,6 +12,9 @@ term_handler() {
 # on callback, stop all started processes in term_handler
 trap 'kill ${!}; term_handler' SIGINT SIGKILL SIGTERM SIGQUIT SIGTSTP SIGSTOP SIGHUP
 
+service dbus start
+bluetoothd &
+
 # run applications in the background
 /etc/init.d/nodered.sh start & 
 
